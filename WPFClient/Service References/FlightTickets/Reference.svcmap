@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c3cb7d92-d14e-4e75-b62f-457ec1bad4a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.2:8733/WCFWebService/FlightTickets/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="46a81a2e-163f-4a63-a05e-71047ca758ad" SourceId="1" SourceUrl="http://192.168.1.2:8733/WCFWebService/FlightTickets/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="a2585a1f-8aff-4d37-a50f-f449e66cf2e7" SourceId="1" SourceUrl="http://192.168.1.2:8733/WCFWebService/FlightTickets/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="33d7f922-110b-430f-b48c-7086ee07649f" SourceId="1" SourceUrl="http://192.168.1.2:8733/WCFWebService/FlightTickets/mex" />
+    <MetadataFile FileName="Entities.Models.Enums.xsd" MetadataType="Schema" ID="10bd053f-813d-43a6-9906-55fd01478957" SourceId="1" SourceUrl="http://192.168.1.2:8733/WCFWebService/FlightTickets/mex" />
+    <MetadataFile FileName="Entities.Models.xsd" MetadataType="Schema" ID="fa056f31-9ed3-4ac8-b9ca-df2515e82770" SourceId="1" SourceUrl="http://192.168.1.2:8733/WCFWebService/FlightTickets/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Entities.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Entities.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Entities.Models.Enums" />
+  <xs:complexType name="ArrayOfFlight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Flight" nillable="true" type="tns:Flight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlight" nillable="true" type="tns:ArrayOfFlight" />
+  <xs:complexType name="Flight">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entities.Models.Enums" minOccurs="0" name="CityFrom" type="q1:CityEnum" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entities.Models.Enums" minOccurs="0" name="CityTo" type="q2:CityEnum" />
+      <xs:element minOccurs="0" name="DepartureTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FlightID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Flight" nillable="true" type="tns:Flight" />
+  <xs:complexType name="ArrayOfReservationSimple">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReservationSimple" nillable="true" type="tns:ReservationSimple" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReservationSimple" nillable="true" type="tns:ArrayOfReservationSimple" />
+  <xs:complexType name="ReservationSimple">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Flight" nillable="true" type="tns:Flight" />
+      <xs:element minOccurs="0" name="FlightID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReservationID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReservationSimple" nillable="true" type="tns:ReservationSimple" />
+</xs:schema>

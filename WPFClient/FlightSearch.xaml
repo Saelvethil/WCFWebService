@@ -1,0 +1,72 @@
+﻿<Window x:Class="WPFClient.FlightSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:WPFClient"
+        mc:Ignorable="d"
+        Title="FlightSearch" Height="700" Width="550"
+        Background="#094AB2">
+    <Window.Resources>
+
+        <DataTemplate x:Key="FlightTemplate">
+            <Border VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" FontWeight="Bold" Content="From: " HorizontalAlignment="Right"/>
+                    <Label Grid.Column="2" FontWeight="Bold"  Content="To:"  HorizontalAlignment="Right"/>
+                    <Label Grid.Column="4" FontWeight="Bold"  Content="Departure date:" HorizontalAlignment="Right"/>
+                    <Label Grid.Column="1" Content="{Binding Path=CityFrom}" HorizontalAlignment="Left"/>
+                    <Label Grid.Column="3"  Content="{Binding Path=CityTo}"  HorizontalAlignment="Left"/>
+                    <Label Grid.Column="5"  Content="{Binding Path=DepartureTime}" HorizontalAlignment="Left"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid VerticalAlignment="Stretch" Background="#1A5BC4" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="Browse Your Reservations" Grid.Row="0" Grid.ColumnSpan="2" Height="40" Margin="10" Click="BrowseReservations_Click" />
+        
+        <Label Content="City from:" Grid.Row="1" Grid.Column="0" Margin="10"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" Margin="10" MinWidth="150" ItemsSource="{Binding Cities}" SelectedItem="{Binding Path=CityFrom, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="City to:" Grid.Row="2" Grid.Column="0" Margin="10"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" Margin="10" MinWidth="150" ItemsSource="{Binding Cities}" SelectedItem="{Binding Path=CityTo, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Departure time:" Grid.Row="3" Grid.Column="0" Margin="10"/>
+        <xctk:DateTimePicker Name="DatePicker" Grid.Row="3" Grid.Column="1" Margin="10" Value="{Binding DepartureTime, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button Content="Search" Grid.Row="4" Grid.ColumnSpan="2" Margin="10" Height="40" Click="SearchButton_Click" />
+
+        <ListView Name="FlightsCollection" Grid.Row="5" Grid.ColumnSpan="2" ItemTemplate="{StaticResource FlightTemplate}" SelectedItem="{Binding SelectedFlight}" Margin="20" Background="#0A5BC4" />
+
+        <Button Content="Reserve Ticket for Selected Flight" Grid.Row="6" Grid.ColumnSpan="2"  Height="40" Margin="10" Click="ReserveTicket_Click" />
+
+    </Grid>
+</Window>
